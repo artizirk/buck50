@@ -658,12 +658,12 @@ const int   value)
 
 void inline __attribute__((always_inline)) user_led_on()
 {
-    gpioc->bsrr = Gpio::Bsrr::BR13;  // set low turn on user LED
+    gpiob->bsrr = Gpio::Bsrr::BS1;  // set hi turn on user LED
 }
 
 void inline __attribute__((always_inline)) user_led_off()
 {
-    gpioc->bsrr = Gpio::Bsrr::BS13;  // set low turn off user LED
+    gpiob->bsrr = Gpio::Bsrr::BR1;  // set low turn off user LED
 }
 
 
@@ -871,9 +871,14 @@ void gpio_init()
                    | Gpio::Crh::MODE15_INPUT             );
 
     // enable on-board user LED, turned off
-    gpioc->bsrr = Gpio::Bsrr::BS13;
-    gpioc->crh.ins(  Gpio::Crh::CNF13_OUTPUT_OPEN_DRAIN
-                   | Gpio::Crh::MODE13_OUTPUT_2_MHZ    );
+    gpiob->bsrr = Gpio::Bsrr::BR1;
+    gpiob->crl.ins(  Gpio::Crl::CNF1_OUTPUT_PUSH_PULL
+                   | Gpio::Crl::MODE1_OUTPUT_2_MHZ    );
+
+    // USB DISC
+    gpiob->bsrr = Gpio::Bsrr::BS9;  // set high, clear sometime later in main before usb init
+    gpiob->crh.ins(  Gpio::Crh::CNF9_OUTPUT_OPEN_DRAIN
+                   | Gpio::Crh::MODE9_OUTPUT_2_MHZ    );
 
 }
 
@@ -3854,6 +3859,12 @@ int main()
                      gpio_init();
 
     user_led_off();
+    // release USB DISC after some time
+    for (int i = 0; i < 0x10000; i++)
+        asm("nop");
+    gpiob->bsrr = Gpio::Bsrr::BR9;
+    //gpiob->crh.ins(  Gpio::Crh::CNF9_INPUT_PULL_UP_DOWN
+    //               | Gpio::Crh::MODE9_INPUT    );
 
     if (!usb_dev.init())
         while (true)    // hang

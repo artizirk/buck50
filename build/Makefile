@@ -82,7 +82,7 @@ INIT_DEFINES   ?= -DWEAK_FUNCTIONS
 
 EXTRA_DEFINES  ?= 
 
-CC_ARM_FLAGS   ?= -mthumb -mcpu=cortex-m3 -fno-exceptions -fno-unwind-tables
+CC_ARM_FLAGS   ?= -mthumb -mcpu=cortex-m3 -fno-exceptions -fno-unwind-tables -fno-builtin
 AS_ARM_FLAGS   ?= -mthumb -mcpu=cortex-m3 -march=armv7-m 
 
 LINK_FLAGS      = -static -M --print-memory-usage
