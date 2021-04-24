@@ -36,7 +36,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc usb_dev.o
  .group         0x0000000000000000        0xc usb_dev.o
  .group         0x0000000000000000        0xc usb_dev.o
- .debug_macro   0x0000000000000000      0xbf2 usb_dev.o
+ .debug_macro   0x0000000000000000      0xbc2 usb_dev.o
  .debug_macro   0x0000000000000000       0x1c usb_dev.o
  .debug_macro   0x0000000000000000       0x22 usb_dev.o
  .debug_macro   0x0000000000000000       0x56 usb_dev.o
@@ -62,7 +62,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc usb_dev_cdc_acm.o
  .group         0x0000000000000000        0xc usb_dev_cdc_acm.o
  .group         0x0000000000000000        0xc usb_dev_cdc_acm.o
- .debug_macro   0x0000000000000000      0xbf2 usb_dev_cdc_acm.o
+ .debug_macro   0x0000000000000000      0xbc2 usb_dev_cdc_acm.o
  .debug_macro   0x0000000000000000       0x10 usb_dev_cdc_acm.o
  .debug_macro   0x0000000000000000       0x1c usb_dev_cdc_acm.o
  .debug_macro   0x0000000000000000       0x1c usb_dev_cdc_acm.o
@@ -111,183 +111,183 @@ LOAD buck50_asm.o
 LOAD stm32f103_flash_init.o
                 0x0000000008000000                . = ORIGIN (FLASH)
 
-.text           0x0000000008000000     0x505e
+.text           0x0000000008000000     0x532e
  *(.vectors)
  .vectors       0x0000000008000000       0xec stm32f103_flash_init.o
                 0x0000000008000000                INTERRUPT_VECTORS
  *(.text)
- .text          0x00000000080000ec     0x3cd0 buck50.o
-                0x00000000080003a0                UsbRecv::_fill()
-                0x0000000008000448                UsbRecv::fill(unsigned int)
-                0x0000000008000478                UsbRecv::flush(unsigned int)
-                0x0000000008000498                usb_send_w_zlp(unsigned char)
-                0x00000000080004e0                duration_timer(unsigned long, bool)
-                0x0000000008000538                halt_timers
-                0x000000000800057c                usb_mcu_init()
-                0x000000000800063c                gpio_init()
-                0x0000000008000694                spi_activate()
-                0x000000000800080c                spi_disable()
-                0x0000000008000840                i2c_activate()
-                0x0000000008000944                i2c_disable()
-                0x0000000008000958                usart_activate()
-                0x0000000008000b24                usart_disable(stm32f103xb::Usart volatile*)
-                0x0000000008000b84                adc_activate(unsigned char, unsigned char, unsigned char*, unsigned char*)
-                0x0000000008000ce4                adc_disable()
-                0x0000000008000d50                gpioa_activate()
-                0x0000000008000dec                gpioa_disable()
-                0x0000000008000e08                pwm_disable()
-                0x0000000008000e48                reset_timer_ganged_ports()
-                0x0000000008000e64                usart_tx(stm32f103xb::Usart volatile*, unsigned char, unsigned long)
-                0x0000000008000eb0                usart_rx(stm32f103xb::Usart volatile*, unsigned char&, unsigned long)
-                0x0000000008000f6c                usart_buf_tx(stm32f103xb::Usart volatile*, unsigned char const*, unsigned int, unsigned long, unsigned long, unsigned char, unsigned int&)
-                0x0000000008001038                usart_buf_tx_rx(stm32f103xb::Usart volatile*, unsigned char const*, unsigned char*, unsigned int, unsigned long, unsigned long, unsigned char, unsigned int&)
-                0x0000000008001108                usart_buf_rx(stm32f103xb::Usart volatile*, unsigned char*, unsigned int, unsigned long, unsigned char, unsigned int&)
-                0x00000000080011dc                spi_tx_rx_mstr(unsigned char, unsigned char&, unsigned long, unsigned long)
-                0x00000000080012e0                spi_tx_rx_slav(unsigned char, unsigned char&)
-                0x000000000800130c                spi_tx_rx_buf_mstr(unsigned char const*, unsigned char*, unsigned int, unsigned long, unsigned long, unsigned long, unsigned char, unsigned int&)
-                0x00000000080013dc                spi_tx_rx_buf_slav(unsigned char const*, unsigned char const*, unsigned char*, unsigned int, unsigned int, unsigned long, unsigned char, unsigned int&)
-                0x00000000080014f0                i2c_master_start(unsigned long)
-                0x0000000008001548                i2c_master_addr(unsigned long, unsigned char, unsigned char, unsigned char)
-                0x0000000008001630                i2c_master(unsigned long, unsigned char const*, unsigned char*, unsigned char, unsigned char, unsigned char, unsigned char&, unsigned char&)
-                0x0000000008001960                i2c_slave(unsigned long, unsigned char const*, unsigned char const*, unsigned char*, unsigned char, unsigned char, unsigned char, unsigned char&, unsigned char&, unsigned char&)
-                0x000000000800198c                bridge_recv(unsigned char*, unsigned char*, unsigned char, unsigned char, unsigned char)
-                0x0000000008001a50                rollover_triggering_timer_enable()
-                0x0000000008001abc                reset_ganged()
-                0x0000000008001b2c                flash_wait_pre()
-                0x0000000008001b94                analog_sampling()
-                0x000000000800223c                digital_sampling()
-                0x000000000800239c                wait_connect_signature()
-                0x0000000008002434                send_samples()
-                0x00000000080025c0                live()
-                0x0000000008003170                pwm()
-                0x000000000800338c                spi_bridge()
-                0x0000000008003590                i2c_bridge()
-                0x0000000008003758                usart_bridge()
-                0x0000000008003900                parallel_bridge()
-                0x0000000008003a0c                counter()
-                0x0000000008003ca8                serial_number()
-                0x0000000008003d04                blink_user_led()
- .text          0x0000000008003dbc      0xc18 usb_dev.o
-                0x0000000008003dbc                stm32f10_12357_xx::UsbDev::serial_number_init()
-                0x0000000008004048                stm32f10_12357_xx::UsbDev::init()
-                0x0000000008004244                stm32f10_12357_xx::UsbDev::recv(unsigned char, unsigned char*)
-                0x00000000080042d0                stm32f10_12357_xx::UsbDev::send(unsigned char, unsigned char const*, unsigned short)
-                0x0000000008004344                stm32f10_12357_xx::UsbDev::reset()
-                0x00000000080044b0                stm32f10_12357_xx::UsbDev::interface_request()
-                0x00000000080044ec                stm32f10_12357_xx::UsbDev::descriptor_request()
-                0x0000000008004578                stm32f10_12357_xx::UsbDev::device_request()
-                0x00000000080045ec                stm32f10_12357_xx::UsbDev::standard_request()
-                0x0000000008004608                stm32f10_12357_xx::UsbDev::control_out()
-                0x00000000080046b0                stm32f10_12357_xx::UsbDev::data_stage_in()
-                0x0000000008004744                stm32f10_12357_xx::UsbDev::setup()
-                0x00000000080047a8                stm32f10_12357_xx::UsbDev::control_in()
-                0x0000000008004838                stm32f10_12357_xx::UsbDev::ctr()
-                0x0000000008004904                stm32f10_12357_xx::UsbDev::interrupt_handler()
-                0x000000000800493c                stm32f10_12357_xx::UsbDev::writ_pma_data(unsigned char const*, unsigned long*, unsigned short)
-                0x000000000800495c                stm32f10_12357_xx::UsbDev::read_pma_data(unsigned char*, unsigned long const*, unsigned short)
-                0x000000000800497c                stm32f10_12357_xx::UsbDev::set_address(unsigned char)
- .text          0x00000000080049d4       0x7c usb_dev_cdc_acm.o
-                0x00000000080049d4                stm32f10_12357_xx::UsbDevCdcAcm::init()
-                0x00000000080049e4                stm32f10_12357_xx::UsbDev::device_class_setup()
-                0x0000000008004a48                stm32f10_12357_xx::UsbDev::set_configuration()
-                0x0000000008004a4c                stm32f10_12357_xx::UsbDev::set_interface()
- .text          0x0000000008004a50      0x414 buck50_asm.o
-                0x0000000008004a50                HardFault_Handler
-                0x0000000008004abc                TIM3_IRQHandler
-                0x0000000008004afc                USB_LP_CAN1_RX0_IRQHandler
-                0x0000000008004c1c                trigger_and_sample_ganged
-                0x0000000008004cfc                trigger_and_sample_plain
- .text          0x0000000008004e64      0x148 stm32f103_flash_init.o
-                0x0000000008004e64                NMI_Handler
-                0x0000000008004e6c                MemManage_Handler
-                0x0000000008004e70                BusFault_Handler
-                0x0000000008004e74                UsageFault_Handler
-                0x0000000008004e78                Reserved1_Handler
-                0x0000000008004e7c                Reserved2_Handler
-                0x0000000008004e80                Reserved3_Handler
-                0x0000000008004e84                Reserved4_Handler
-                0x0000000008004e88                SVCall_Handler
-                0x0000000008004e8c                Debug_Handler
-                0x0000000008004e90                Reserved5_Handler
-                0x0000000008004e94                PendSV_Handler
-                0x0000000008004e98                SysTick_Handler
-                0x0000000008004e9c                WWDG_IRQHandler
-                0x0000000008004ea0                PVD_IRQHandler
-                0x0000000008004ea4                TAMPER_IRQHandler
-                0x0000000008004ea8                RTC_IRQHandler
-                0x0000000008004eac                FLASH_IRQHandler
-                0x0000000008004eb0                RCC_IRQHandler
-                0x0000000008004eb4                EXTI0_IRQHandler
-                0x0000000008004eb8                EXTI1_IRQHandler
-                0x0000000008004ebc                EXTI2_IRQHandler
-                0x0000000008004ec0                EXTI3_IRQHandler
-                0x0000000008004ec4                EXTI4_IRQHandler
-                0x0000000008004ec8                DMA1_Channel1_IRQHandler
-                0x0000000008004ecc                DMA1_Channel2_IRQHandler
-                0x0000000008004ed0                DMA1_Channel3_IRQHandler
-                0x0000000008004ed4                DMA1_Channel4_IRQHandler
-                0x0000000008004ed8                DMA1_Channel5_IRQHandler
-                0x0000000008004edc                DMA1_Channel6_IRQHandler
-                0x0000000008004ee0                DMA1_Channel7_IRQHandler
-                0x0000000008004ee4                ADC1_2_IRQHandler
-                0x0000000008004ee8                USB_HP_CAN1_TX_IRQHandle
-                0x0000000008004ef0                CAN1_RX1_IRQHandler
-                0x0000000008004ef4                CAN1_SCE_IRQHandler
-                0x0000000008004ef8                EXTI9_5_IRQHandler
-                0x0000000008004efc                TIM1_BRK_IRQHandler
-                0x0000000008004f00                TIM1_UP_IRQHandler
-                0x0000000008004f04                TIM1_TRG_COM_IRQHandler
-                0x0000000008004f08                TIM1_CC_IRQHandler
-                0x0000000008004f0c                TIM2_IRQHandler
-                0x0000000008004f14                TIM4_IRQHandler
-                0x0000000008004f18                I2C1_EV_IRQHandler
-                0x0000000008004f1c                I2C1_ER_IRQHandler
-                0x0000000008004f20                I2C2_EV_IRQHandler
-                0x0000000008004f24                I2C2_ER_IRQHandler
-                0x0000000008004f28                SPI1_IRQHandler
-                0x0000000008004f2c                SPI2_IRQHandler
-                0x0000000008004f30                USART1_IRQHandler
-                0x0000000008004f34                USART2_IRQHandler
-                0x0000000008004f38                USART3_IRQHandler
-                0x0000000008004f3c                EXTI15_10_IRQHandler
-                0x0000000008004f40                RTC_Alarm_IRQHandler
-                0x0000000008004f44                USBWakeUp_IRQHandler
-                0x0000000008004f48                init
+ .text          0x00000000080000ec     0x3f28 buck50.o
+                0x00000000080003b4                UsbRecv::_fill()
+                0x0000000008000548                UsbRecv::fill(unsigned int)
+                0x0000000008000578                UsbRecv::flush(unsigned int)
+                0x0000000008000598                usb_send_w_zlp(unsigned char)
+                0x00000000080005e0                duration_timer(unsigned long, bool)
+                0x0000000008000644                halt_timers
+                0x000000000800068c                usb_mcu_init()
+                0x0000000008000748                gpio_init()
+                0x00000000080007b8                spi_activate()
+                0x0000000008000914                spi_disable()
+                0x0000000008000950                i2c_activate()
+                0x0000000008000a68                i2c_disable()
+                0x0000000008000ab4                usart_activate()
+                0x0000000008000c74                usart_disable(stm32f103xb::Usart volatile*)
+                0x0000000008000cec                adc_activate(unsigned char, unsigned char, unsigned char*, unsigned char*)
+                0x0000000008000e6c                adc_disable()
+                0x0000000008000ee0                gpioa_activate()
+                0x0000000008000f7c                gpioa_disable()
+                0x0000000008000fa4                pwm_disable()
+                0x0000000008000fec                reset_timer_ganged_ports()
+                0x000000000800100c                usart_tx(stm32f103xb::Usart volatile*, unsigned char, unsigned long)
+                0x0000000008001060                usart_rx(stm32f103xb::Usart volatile*, unsigned char&, unsigned long)
+                0x0000000008001134                usart_buf_tx(stm32f103xb::Usart volatile*, unsigned char const*, unsigned int, unsigned long, unsigned long, unsigned char, unsigned int&)
+                0x00000000080011ec                usart_buf_tx_rx(stm32f103xb::Usart volatile*, unsigned char const*, unsigned char*, unsigned int, unsigned long, unsigned long, unsigned char, unsigned int&)
+                0x00000000080012b8                usart_buf_rx(stm32f103xb::Usart volatile*, unsigned char*, unsigned int, unsigned long, unsigned char, unsigned int&)
+                0x0000000008001398                spi_tx_rx_mstr(unsigned char, unsigned char&, unsigned long, unsigned long)
+                0x00000000080014e0                spi_tx_rx_slav(unsigned char, unsigned char&)
+                0x000000000800150c                spi_tx_rx_buf_mstr(unsigned char const*, unsigned char*, unsigned int, unsigned long, unsigned long, unsigned long, unsigned char, unsigned int&)
+                0x00000000080015d0                spi_tx_rx_buf_slav(unsigned char const*, unsigned char const*, unsigned char*, unsigned int, unsigned int, unsigned long, unsigned char, unsigned int&)
+                0x00000000080016c8                i2c_master_start(unsigned long)
+                0x000000000800172c                i2c_master_addr(unsigned long, unsigned char, unsigned char, unsigned char)
+                0x000000000800183c                i2c_master(unsigned long, unsigned char const*, unsigned char*, unsigned char, unsigned char, unsigned char, unsigned char&, unsigned char&)
+                0x0000000008001bd8                i2c_slave(unsigned long, unsigned char const*, unsigned char const*, unsigned char*, unsigned char, unsigned char, unsigned char, unsigned char&, unsigned char&, unsigned char&)
+                0x0000000008001c0c                bridge_recv(unsigned char*, unsigned char*, unsigned char, unsigned char, unsigned char)
+                0x0000000008001c4c                rollover_triggering_timer_enable()
+                0x0000000008001cdc                reset_ganged()
+                0x0000000008001d48                flash_wait_pre()
+                0x0000000008001da0                analog_sampling()
+                0x0000000008002468                digital_sampling()
+                0x00000000080025b8                wait_connect_signature()
+                0x0000000008002648                send_samples()
+                0x00000000080027c4                live()
+                0x0000000008003380                pwm()
+                0x0000000008003564                spi_bridge()
+                0x0000000008003768                i2c_bridge()
+                0x000000000800396c                usart_bridge()
+                0x0000000008003b2c                parallel_bridge()
+                0x0000000008003c58                counter()
+                0x0000000008003f00                serial_number()
+                0x0000000008003f60                blink_user_led()
+ .text          0x0000000008004014      0xc8c usb_dev.o
+                0x0000000008004014                stm32f10_12357_xx::UsbDev::serial_number_init()
+                0x000000000800425c                stm32f10_12357_xx::UsbDev::init()
+                0x000000000800445c                stm32f10_12357_xx::UsbDev::recv(unsigned char, unsigned char*)
+                0x00000000080044dc                stm32f10_12357_xx::UsbDev::send(unsigned char, unsigned char const*, unsigned short)
+                0x0000000008004550                stm32f10_12357_xx::UsbDev::reset()
+                0x00000000080046b0                stm32f10_12357_xx::UsbDev::interface_request()
+                0x00000000080046ec                stm32f10_12357_xx::UsbDev::descriptor_request()
+                0x0000000008004780                stm32f10_12357_xx::UsbDev::device_request()
+                0x00000000080047f4                stm32f10_12357_xx::UsbDev::standard_request()
+                0x0000000008004840                stm32f10_12357_xx::UsbDev::control_out()
+                0x00000000080048f0                stm32f10_12357_xx::UsbDev::data_stage_in()
+                0x000000000800498c                stm32f10_12357_xx::UsbDev::setup()
+                0x0000000008004a30                stm32f10_12357_xx::UsbDev::control_in()
+                0x0000000008004ad0                stm32f10_12357_xx::UsbDev::ctr()
+                0x0000000008004bd0                stm32f10_12357_xx::UsbDev::interrupt_handler()
+                0x0000000008004c10                stm32f10_12357_xx::UsbDev::writ_pma_data(unsigned char const*, unsigned long*, unsigned short)
+                0x0000000008004c28                stm32f10_12357_xx::UsbDev::read_pma_data(unsigned char*, unsigned long const*, unsigned short)
+                0x0000000008004c40                stm32f10_12357_xx::UsbDev::set_address(unsigned char)
+ .text          0x0000000008004ca0       0x80 usb_dev_cdc_acm.o
+                0x0000000008004ca0                stm32f10_12357_xx::UsbDevCdcAcm::init()
+                0x0000000008004cb0                stm32f10_12357_xx::UsbDev::device_class_setup()
+                0x0000000008004d18                stm32f10_12357_xx::UsbDev::set_configuration()
+                0x0000000008004d1c                stm32f10_12357_xx::UsbDev::set_interface()
+ .text          0x0000000008004d20      0x414 buck50_asm.o
+                0x0000000008004d20                HardFault_Handler
+                0x0000000008004d8c                TIM3_IRQHandler
+                0x0000000008004dcc                USB_LP_CAN1_RX0_IRQHandler
+                0x0000000008004eec                trigger_and_sample_ganged
+                0x0000000008004fcc                trigger_and_sample_plain
+ .text          0x0000000008005134      0x148 stm32f103_flash_init.o
+                0x0000000008005134                NMI_Handler
+                0x000000000800513c                MemManage_Handler
+                0x0000000008005140                BusFault_Handler
+                0x0000000008005144                UsageFault_Handler
+                0x0000000008005148                Reserved1_Handler
+                0x000000000800514c                Reserved2_Handler
+                0x0000000008005150                Reserved3_Handler
+                0x0000000008005154                Reserved4_Handler
+                0x0000000008005158                SVCall_Handler
+                0x000000000800515c                Debug_Handler
+                0x0000000008005160                Reserved5_Handler
+                0x0000000008005164                PendSV_Handler
+                0x0000000008005168                SysTick_Handler
+                0x000000000800516c                WWDG_IRQHandler
+                0x0000000008005170                PVD_IRQHandler
+                0x0000000008005174                TAMPER_IRQHandler
+                0x0000000008005178                RTC_IRQHandler
+                0x000000000800517c                FLASH_IRQHandler
+                0x0000000008005180                RCC_IRQHandler
+                0x0000000008005184                EXTI0_IRQHandler
+                0x0000000008005188                EXTI1_IRQHandler
+                0x000000000800518c                EXTI2_IRQHandler
+                0x0000000008005190                EXTI3_IRQHandler
+                0x0000000008005194                EXTI4_IRQHandler
+                0x0000000008005198                DMA1_Channel1_IRQHandler
+                0x000000000800519c                DMA1_Channel2_IRQHandler
+                0x00000000080051a0                DMA1_Channel3_IRQHandler
+                0x00000000080051a4                DMA1_Channel4_IRQHandler
+                0x00000000080051a8                DMA1_Channel5_IRQHandler
+                0x00000000080051ac                DMA1_Channel6_IRQHandler
+                0x00000000080051b0                DMA1_Channel7_IRQHandler
+                0x00000000080051b4                ADC1_2_IRQHandler
+                0x00000000080051b8                USB_HP_CAN1_TX_IRQHandle
+                0x00000000080051c0                CAN1_RX1_IRQHandler
+                0x00000000080051c4                CAN1_SCE_IRQHandler
+                0x00000000080051c8                EXTI9_5_IRQHandler
+                0x00000000080051cc                TIM1_BRK_IRQHandler
+                0x00000000080051d0                TIM1_UP_IRQHandler
+                0x00000000080051d4                TIM1_TRG_COM_IRQHandler
+                0x00000000080051d8                TIM1_CC_IRQHandler
+                0x00000000080051dc                TIM2_IRQHandler
+                0x00000000080051e4                TIM4_IRQHandler
+                0x00000000080051e8                I2C1_EV_IRQHandler
+                0x00000000080051ec                I2C1_ER_IRQHandler
+                0x00000000080051f0                I2C2_EV_IRQHandler
+                0x00000000080051f4                I2C2_ER_IRQHandler
+                0x00000000080051f8                SPI1_IRQHandler
+                0x00000000080051fc                SPI2_IRQHandler
+                0x0000000008005200                USART1_IRQHandler
+                0x0000000008005204                USART2_IRQHandler
+                0x0000000008005208                USART3_IRQHandler
+                0x000000000800520c                EXTI15_10_IRQHandler
+                0x0000000008005210                RTC_Alarm_IRQHandler
+                0x0000000008005214                USBWakeUp_IRQHandler
+                0x0000000008005218                init
  *(.rodata)
- .rodata        0x0000000008004fac       0x24 buck50.o
- .rodata        0x0000000008004fd0       0x4c usb_dev.o
-                0x0000000008004fd0                stm32f10_12357_xx::UsbDev::_DESC_EP_TYPE_TO_EPR_EP_TYPE
-                0x0000000008004ff0                stm32f10_12357_xx::UsbDev::_VENDOR_STRING_DESC
-                0x0000000008005018                stm32f10_12357_xx::UsbDev::_LANGUAGE_ID_STRING_DESC
- .rodata        0x000000000800501c       0x42 usb_dev_cdc_acm.o
-                0x000000000800501c                stm32f10_12357_xx::UsbDevCdcAcm::_device_string_desc
-                0x000000000800504c                stm32f10_12357_xx::UsbDev::_DEVICE_DESC
+ .rodata        0x000000000800527c       0x24 buck50.o
+ .rodata        0x00000000080052a0       0x4c usb_dev.o
+                0x00000000080052a0                stm32f10_12357_xx::UsbDev::_DESC_EP_TYPE_TO_EPR_EP_TYPE
+                0x00000000080052c0                stm32f10_12357_xx::UsbDev::_VENDOR_STRING_DESC
+                0x00000000080052e8                stm32f10_12357_xx::UsbDev::_LANGUAGE_ID_STRING_DESC
+ .rodata        0x00000000080052ec       0x42 usb_dev_cdc_acm.o
+                0x00000000080052ec                stm32f10_12357_xx::UsbDevCdcAcm::_device_string_desc
+                0x000000000800531c                stm32f10_12357_xx::UsbDev::_DEVICE_DESC
 
-.glue_7         0x0000000008005060        0x0
- .glue_7        0x0000000008005060        0x0 linker stubs
+.glue_7         0x0000000008005330        0x0
+ .glue_7        0x0000000008005330        0x0 linker stubs
 
-.glue_7t        0x0000000008005060        0x0
- .glue_7t       0x0000000008005060        0x0 linker stubs
+.glue_7t        0x0000000008005330        0x0
+ .glue_7t       0x0000000008005330        0x0 linker stubs
 
-.vfp11_veneer   0x0000000008005060        0x0
- .vfp11_veneer  0x0000000008005060        0x0 linker stubs
+.vfp11_veneer   0x0000000008005330        0x0
+ .vfp11_veneer  0x0000000008005330        0x0 linker stubs
 
-.v4_bx          0x0000000008005060        0x0
- .v4_bx         0x0000000008005060        0x0 linker stubs
+.v4_bx          0x0000000008005330        0x0
+ .v4_bx         0x0000000008005330        0x0 linker stubs
 
-.text.startup   0x0000000008005060      0x36c
- .text.startup  0x0000000008005060      0x36c buck50.o
-                0x0000000008005060                main
+.text.startup   0x0000000008005330      0x33c
+ .text.startup  0x0000000008005330      0x33c buck50.o
+                0x0000000008005330                main
 
-.iplt           0x00000000080053cc        0x0
- .iplt          0x00000000080053cc        0x0 buck50.o
+.iplt           0x000000000800566c        0x0
+ .iplt          0x000000000800566c        0x0 buck50.o
 
-.rel.dyn        0x00000000080053cc        0x0
- .rel.iplt      0x00000000080053cc        0x0 buck50.o
-                0x00000000080053cc                . = ALIGN (0x4)
-                0x00000000080053cc                INITIALIZED_DATA_ADDR_IN_FLASH = .
+.rel.dyn        0x000000000800566c        0x0
+ .rel.iplt      0x000000000800566c        0x0 buck50.o
+                0x000000000800566c                . = ALIGN (0x4)
+                0x000000000800566c                INITIALIZED_DATA_ADDR_IN_FLASH = .
 
-.data           0x0000000020000000      0x178 load address 0x00000000080053cc
+.data           0x0000000020000000      0x178 load address 0x000000000800566c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                INITIALIZED_DATA_ADDR_IN_RAM_START = .
  *(.data)
@@ -312,18 +312,18 @@ LOAD stm32f103_flash_init.o
                 0x0000000020000178                INITIALIZED_DATA_ADDR_IN_RAM_END = .
                 0x0000000020000178                BSS_START = .
 
-.init_array     0x0000000020000178        0x4 load address 0x0000000008005544
+.init_array     0x0000000020000178        0x4 load address 0x00000000080057e4
  .init_array    0x0000000020000178        0x4 buck50.o
 
-.igot.plt       0x000000002000017c        0x0 load address 0x0000000008005548
+.igot.plt       0x000000002000017c        0x0 load address 0x00000000080057e8
  .igot.plt      0x000000002000017c        0x0 buck50.o
 
-.bss            0x0000000020000180       0xd4 load address 0x0000000008005550
+.bss            0x0000000020000180       0xd4 load address 0x00000000080057f0
                 0x0000000020000180                . = ALIGN (0x4)
  *(.bss)
  .bss           0x0000000020000180       0xd4 buck50.o
-                0x0000000020000180                send_buf
-                0x00000000200001c0                usb_recv
+                0x0000000020000180                usb_recv
+                0x00000000200001c8                send_buf
                 0x0000000020000208                sys_tick_timer
                 0x0000000020000218                num_analog_words
                 0x000000002000021c                analog_sample_rate
@@ -337,7 +337,7 @@ LOAD stm32f103_flash_init.o
  .bss           0x0000000020000254        0x0 stm32f103_flash_init.o
                 0x0000000020000254                BSS_END = .
 
-.stack          0x0000000020000254      0x244 load address 0x0000000008005624
+.stack          0x0000000020000254      0x244 load address 0x00000000080058c4
                 0x0000000020000258                . = ALIGN (0x8)
  *fill*         0x0000000020000254        0x4 
  *(.stack)
@@ -350,25 +350,25 @@ LOAD stm32f103_flash_init.o
 OUTPUT(buck50.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000   0x209e82
- .debug_info    0x0000000000000000    0xd3f5d buck50.o
- .debug_info    0x00000000000d3f5d    0x9da6f usb_dev.o
- .debug_info    0x00000000001719cc    0x97cae usb_dev_cdc_acm.o
- .debug_info    0x000000000020967a       0x26 buck50_asm.o
- .debug_info    0x00000000002096a0      0x7e2 stm32f103_flash_init.o
+.debug_info     0x0000000000000000   0x1f5a6d
+ .debug_info    0x0000000000000000    0xcc8fe buck50.o
+ .debug_info    0x00000000000cc8fe    0x974e3 usb_dev.o
+ .debug_info    0x0000000000163de1    0x91501 usb_dev_cdc_acm.o
+ .debug_info    0x00000000001f52e2       0x26 buck50_asm.o
+ .debug_info    0x00000000001f5308      0x765 stm32f103_flash_init.o
 
-.debug_abbrev   0x0000000000000000     0x21b1
- .debug_abbrev  0x0000000000000000      0xe51 buck50.o
- .debug_abbrev  0x0000000000000e51      0x9fb usb_dev.o
- .debug_abbrev  0x000000000000184c      0x7d8 usb_dev_cdc_acm.o
- .debug_abbrev  0x0000000000002024       0x14 buck50_asm.o
- .debug_abbrev  0x0000000000002038      0x179 stm32f103_flash_init.o
+.debug_abbrev   0x0000000000000000     0x214a
+ .debug_abbrev  0x0000000000000000      0xe17 buck50.o
+ .debug_abbrev  0x0000000000000e17      0x9d7 usb_dev.o
+ .debug_abbrev  0x00000000000017ee      0x7e2 usb_dev_cdc_acm.o
+ .debug_abbrev  0x0000000000001fd0       0x14 buck50_asm.o
+ .debug_abbrev  0x0000000000001fe4      0x166 stm32f103_flash_init.o
 
-.debug_loc      0x0000000000000000    0x15a6d
- .debug_loc     0x0000000000000000    0x1115b buck50.o
- .debug_loc     0x000000000001115b     0x4659 usb_dev.o
- .debug_loc     0x00000000000157b4      0x208 usb_dev_cdc_acm.o
- .debug_loc     0x00000000000159bc       0xb1 stm32f103_flash_init.o
+.debug_loc      0x0000000000000000    0x17021
+ .debug_loc     0x0000000000000000    0x123d8 buck50.o
+ .debug_loc     0x00000000000123d8     0x4a1a usb_dev.o
+ .debug_loc     0x0000000000016df2      0x17e usb_dev_cdc_acm.o
+ .debug_loc     0x0000000000016f70       0xb1 stm32f103_flash_init.o
 
 .debug_aranges  0x0000000000000000       0xb0
  .debug_aranges
@@ -382,73 +382,73 @@ LOAD linker stubs
  .debug_aranges
                 0x0000000000000090       0x20 stm32f103_flash_init.o
 
-.debug_ranges   0x0000000000000000     0x7128
- .debug_ranges  0x0000000000000000     0x53f0 buck50.o
- .debug_ranges  0x00000000000053f0     0x1cf8 usb_dev.o
- .debug_ranges  0x00000000000070e8       0x40 usb_dev_cdc_acm.o
+.debug_ranges   0x0000000000000000     0x6e58
+ .debug_ranges  0x0000000000000000     0x5218 buck50.o
+ .debug_ranges  0x0000000000005218     0x1c08 usb_dev.o
+ .debug_ranges  0x0000000000006e20       0x38 usb_dev_cdc_acm.o
 
-.debug_macro    0x0000000000000000    0x11b83
+.debug_macro    0x0000000000000000    0x11ae5
  .debug_macro   0x0000000000000000      0x105 buck50.o
- .debug_macro   0x0000000000000105      0xbf2 buck50.o
- .debug_macro   0x0000000000000cf7      0x17c buck50.o
- .debug_macro   0x0000000000000e73       0x10 buck50.o
- .debug_macro   0x0000000000000e83       0x9e buck50.o
- .debug_macro   0x0000000000000f21       0xfd buck50.o
- .debug_macro   0x000000000000101e      0x3a0 buck50.o
- .debug_macro   0x00000000000013be       0x1c buck50.o
- .debug_macro   0x00000000000013da       0x22 buck50.o
- .debug_macro   0x00000000000013fc       0x56 buck50.o
- .debug_macro   0x0000000000001452       0x51 buck50.o
- .debug_macro   0x00000000000014a3      0x103 buck50.o
- .debug_macro   0x00000000000015a6       0x6a buck50.o
- .debug_macro   0x0000000000001610      0x1df buck50.o
- .debug_macro   0x00000000000017ef       0x10 buck50.o
- .debug_macro   0x00000000000017ff       0x31 buck50.o
- .debug_macro   0x0000000000001830       0x24 buck50.o
- .debug_macro   0x0000000000001854       0x23 buck50.o
- .debug_macro   0x0000000000001877       0x12 buck50.o
- .debug_macro   0x0000000000001889       0x20 buck50.o
- .debug_macro   0x00000000000018a9       0x1c buck50.o
- .debug_macro   0x00000000000018c5       0x10 buck50.o
- .debug_macro   0x00000000000018d5       0x1c buck50.o
- .debug_macro   0x00000000000018f1       0xb3 usb_dev.o
- .debug_macro   0x00000000000019a4       0x1d usb_dev.o
- .debug_macro   0x00000000000019c1       0xb2 usb_dev_cdc_acm.o
- .debug_macro   0x0000000000001a73       0xb9 stm32f103_flash_init.o
- .debug_macro   0x0000000000001b2c      0xa90 stm32f103_flash_init.o
- .debug_macro   0x00000000000025bc       0x8e stm32f103_flash_init.o
- .debug_macro   0x000000000000264a       0x22 stm32f103_flash_init.o
- .debug_macro   0x000000000000266c       0x3a stm32f103_flash_init.o
- .debug_macro   0x00000000000026a6       0x34 stm32f103_flash_init.o
- .debug_macro   0x00000000000026da      0xb8e stm32f103_flash_init.o
- .debug_macro   0x0000000000003268     0xe90a stm32f103_flash_init.o
- .debug_macro   0x0000000000011b72       0x11 stm32f103_flash_init.o
+ .debug_macro   0x0000000000000105      0xbc2 buck50.o
+ .debug_macro   0x0000000000000cc7      0x18a buck50.o
+ .debug_macro   0x0000000000000e51       0x10 buck50.o
+ .debug_macro   0x0000000000000e61       0xac buck50.o
+ .debug_macro   0x0000000000000f0d       0xf7 buck50.o
+ .debug_macro   0x0000000000001004      0x34c buck50.o
+ .debug_macro   0x0000000000001350       0x1c buck50.o
+ .debug_macro   0x000000000000136c       0x22 buck50.o
+ .debug_macro   0x000000000000138e       0x56 buck50.o
+ .debug_macro   0x00000000000013e4       0x51 buck50.o
+ .debug_macro   0x0000000000001435      0x103 buck50.o
+ .debug_macro   0x0000000000001538       0x6a buck50.o
+ .debug_macro   0x00000000000015a2      0x1df buck50.o
+ .debug_macro   0x0000000000001781       0x10 buck50.o
+ .debug_macro   0x0000000000001791       0x31 buck50.o
+ .debug_macro   0x00000000000017c2       0x24 buck50.o
+ .debug_macro   0x00000000000017e6       0x23 buck50.o
+ .debug_macro   0x0000000000001809       0x12 buck50.o
+ .debug_macro   0x000000000000181b       0x20 buck50.o
+ .debug_macro   0x000000000000183b       0x1c buck50.o
+ .debug_macro   0x0000000000001857       0x10 buck50.o
+ .debug_macro   0x0000000000001867       0x1c buck50.o
+ .debug_macro   0x0000000000001883       0xb3 usb_dev.o
+ .debug_macro   0x0000000000001936       0x1d usb_dev.o
+ .debug_macro   0x0000000000001953       0xb2 usb_dev_cdc_acm.o
+ .debug_macro   0x0000000000001a05       0xb9 stm32f103_flash_init.o
+ .debug_macro   0x0000000000001abe      0xa60 stm32f103_flash_init.o
+ .debug_macro   0x000000000000251e       0x8e stm32f103_flash_init.o
+ .debug_macro   0x00000000000025ac       0x22 stm32f103_flash_init.o
+ .debug_macro   0x00000000000025ce       0x3a stm32f103_flash_init.o
+ .debug_macro   0x0000000000002608       0x34 stm32f103_flash_init.o
+ .debug_macro   0x000000000000263c      0xb8e stm32f103_flash_init.o
+ .debug_macro   0x00000000000031ca     0xe90a stm32f103_flash_init.o
+ .debug_macro   0x0000000000011ad4       0x11 stm32f103_flash_init.o
 
-.debug_line     0x0000000000000000     0xd16c
- .debug_line    0x0000000000000000     0x9be8 buck50.o
- .debug_line    0x0000000000009be8     0x2743 usb_dev.o
- .debug_line    0x000000000000c32b      0x369 usb_dev_cdc_acm.o
- .debug_line    0x000000000000c694       0xec buck50_asm.o
- .debug_line    0x000000000000c780      0x9ec stm32f103_flash_init.o
+.debug_line     0x0000000000000000     0xd2af
+ .debug_line    0x0000000000000000     0x9d24 buck50.o
+ .debug_line    0x0000000000009d24     0x289f usb_dev.o
+ .debug_line    0x000000000000c5c3      0x2c4 usb_dev_cdc_acm.o
+ .debug_line    0x000000000000c887       0xec buck50_asm.o
+ .debug_line    0x000000000000c973      0x93c stm32f103_flash_init.o
 
-.debug_str      0x0000000000000000   0x188fe8
- .debug_str     0x0000000000000000   0x13607c buck50.o
-                                     0x136d43 (size before relaxing)
- .debug_str     0x000000000013607c      0xceb usb_dev.o
-                                      0xfc081 (size before relaxing)
- .debug_str     0x0000000000136d67      0x121 usb_dev_cdc_acm.o
-                                      0xfb585 (size before relaxing)
- .debug_str     0x0000000000136e88       0x1f buck50_asm.o
-                                         0x55 (size before relaxing)
- .debug_str     0x0000000000136ea7    0x52141 stm32f103_flash_init.o
-                                      0x55caf (size before relaxing)
+.debug_str      0x0000000000000000   0x16ab0f
+ .debug_str     0x0000000000000000   0x1177ba buck50.o
+                                     0x118453 (size before relaxing)
+ .debug_str     0x00000000001177ba     0x1094 usb_dev.o
+                                      0xdf34b (size before relaxing)
+ .debug_str     0x000000000011884e      0x16b usb_dev_cdc_acm.o
+                                      0xde493 (size before relaxing)
+ .debug_str     0x00000000001189b9       0x1f buck50_asm.o
+                                         0x3c (size before relaxing)
+ .debug_str     0x00000000001189d8    0x52137 stm32f103_flash_init.o
+                                      0x55b54 (size before relaxing)
 
-.comment        0x0000000000000000       0x4c
- .comment       0x0000000000000000       0x4c buck50.o
-                                         0x4d (size before relaxing)
- .comment       0x000000000000004c       0x4d usb_dev.o
- .comment       0x000000000000004c       0x4d usb_dev_cdc_acm.o
- .comment       0x000000000000004c       0x4d stm32f103_flash_init.o
+.comment        0x0000000000000000       0x1e
+ .comment       0x0000000000000000       0x1e buck50.o
+                                         0x1f (size before relaxing)
+ .comment       0x000000000000001e       0x1f usb_dev.o
+ .comment       0x000000000000001e       0x1f usb_dev_cdc_acm.o
+ .comment       0x000000000000001e       0x1f stm32f103_flash_init.o
 
 .ARM.attributes
                 0x0000000000000000       0x2b
@@ -463,11 +463,11 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000000000000a2       0x2d stm32f103_flash_init.o
 
-.debug_frame    0x0000000000000000      0xea4
- .debug_frame   0x0000000000000000      0x838 buck50.o
- .debug_frame   0x0000000000000838      0x25c usb_dev.o
- .debug_frame   0x0000000000000a94       0x50 usb_dev_cdc_acm.o
- .debug_frame   0x0000000000000ae4      0x3c0 stm32f103_flash_init.o
+.debug_frame    0x0000000000000000      0xe94
+ .debug_frame   0x0000000000000000      0x830 buck50.o
+ .debug_frame   0x0000000000000830      0x238 usb_dev.o
+ .debug_frame   0x0000000000000a68       0x6c usb_dev_cdc_acm.o
+ .debug_frame   0x0000000000000ad4      0x3c0 stm32f103_flash_init.o
 Memory region         Used Size  Region Size  %age Used
-           FLASH:       21452 B        64 KB     32.73%
+           FLASH:       22124 B        64 KB     33.76%
              RAM:        1176 B        20 KB      5.74%
